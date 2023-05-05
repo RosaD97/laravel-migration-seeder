@@ -4,8 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
-
 return new class extends Migration
 {
     /**
@@ -20,11 +18,11 @@ return new class extends Migration
             $table->string('azienda', 50);
             $table->string('stazione_di_partenza', 50);
             $table->string('stazione_di_arrivo', 50);
-            $table->time('orario_di_partenza');
-            $table->time('orario_di_arrivo');
+            $table->dateTime('orario_di_partenza');
+            $table->dateTime('orario_di_arrivo');
             $table->string('codice_treno', 10);
-            $table->tinyInteger('in_orario')->unsigned();
-            $table->tinyInteger('cancellato');
+            $table->string('in_orario', 2);
+            $table->string('cancellato', 2);
             $table->timestamps();
         });
     }
